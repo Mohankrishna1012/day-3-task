@@ -3,6 +3,8 @@ request.open("GET","https://restcountries.com/v2/all");
 request.send();
 request.onload=function(){
     var restcountries = JSON.parse(request.response);
-    console.log(restcountries);
-    console.log(restcountries.map((country) => country.flags));
+    for(let i=0;i<restcountries.length;i++){
+        console.log(restcountries[i].flag);
+    }
+
 };
